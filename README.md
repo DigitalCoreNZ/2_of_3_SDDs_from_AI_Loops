@@ -52,7 +52,7 @@ cd ~/Downloads
 *   I run the following command to clone this repo:
 
 ```bash
-git clone https://github.com/DigitalCoreNZ/SDDs-SKILL.git
+git clone https://github.com/DigitalCoreNZ/2_of_3_SDDs_from_Loops
 ```
 
 ---
@@ -77,9 +77,7 @@ hermes model
 hermes
 ```
 
-*   I run the following prompt within Hermes Agent to install the SKILL:
-
-`You will create a new SKILL that is based on the content of the "~/Downloads/SDDs-SKILL/SDDs-SKILL_v0.5.2.md" Markdown file.`
+*   I run [this prompt within Hermes Agent](Install_Prompt_Directions_v0.5.6.md) to install the SKILL.
 
 *   Here are the two (2) Hermes Agent commands for this SKILL:
 
@@ -93,7 +91,7 @@ hermes
 
 ## License
 
-Due to Hermes Agent being released under the MIT license, this project is also released under the same, permissive requirements, i.e. No restrictions, no limits. This means that you are welcome, and even encouraged, to use the content of this repository as the foundation for derivative works. For instance, if you are inspired to fork this repo and adapt it to your favourite AI agent, then send me an email with the subject line `SDDs-SKILL` (because I already have an email rule setup) and a link to your project so I can add it to the `Adaptations` section below.
+Due to Hermes Agent being released under the MIT license, this project is also released under the same, permissive requirements, i.e. no restrictions, no limits, no liability. This means that you are welcome, and even encouraged, to use the content of this repository as the foundation for derivative works. For instance, if you are inspired to fork this repo and adapt it to your favourite AI agent, then send me an email with the subject line `SDDs-from-Loops` (because I already have an email rule setup) and a link to your project so I can add it to the `Adaptations` section below.
 
 ---
 
@@ -105,13 +103,13 @@ None at this time.
 
 ## A Complete Breakdown
 
-There is a document called `SDDs_from_Loops_v0.5.6.md`. This file contains _every painful detail_ that relates to the creation of this SKILL.
+There is a report called `[SDDs_from_AI_Loops_v0.5.6.md](./SDDs_from_AI_Loops_v0.5.6.md)`. This file contains _every painful detail_ that relates to the creation of this SKILL.
 
 ---
 
 ## The Hermes Agent Installation Prompt
 
-There is another file called `Hermes_Install_Prompt_v0.5.6.txt`. The Hermes Agent prompt requires a simple copy-paste operation.
+There is another file called `[Install_Prompt_Directions_v0.5.6.md](./Install_Prompt_Directions_v0.5.6.md)` that contains the Hermes Agent installation prompt.
 
 ---
 
@@ -123,7 +121,7 @@ Once I confirm the stability of this version (by using it to build a whole range
 
 Other features for future versions include queues, sandboxing, suspend and resume, durable memory, and event streams.
 
-Eventually, I will use the accumulated features of this SKILL to build an app that includes:
+Eventually, I will use the accumulated features of this SKILL to build a software development app that includes:
 
 * An API,
 * The [fifth specification release of MCP from Anthropic](https://claude.com/blog/bringing-mcp-2026-07-28-to-claude),
@@ -136,7 +134,7 @@ Eventually, I will use the accumulated features of this SKILL to build an app th
 
 This is the first Hermes Agent SKILL I have ever released into the wild.
 
-My objective is to adapt the underlying concepts of this Hermes Agent SKILL to the [AppSpec Files from Loops](https://github.com/DigitalCoreNZ/1_of_3_Specs_from_Loops) repo and the [Apps from Loops](https://github.com/DigitalCoreNZ/3_of_3_Apps_from_Loops) repo, resulting in a complete Hermes Agent workflow that can be applied to the app that was mentioned in the previous section.
+My objective is to combine the underlying concepts of this Hermes Agent SKILL with the [AppSpec Files from Loops](https://github.com/DigitalCoreNZ/1_of_3_Specs_from_AI_Loops) repo and the [Apps from AI Loops](https://github.com/DigitalCoreNZ/3_of_3_Apps_from_AI_Loops) repo, resulting in a complete Hermes Agent workflow that can be applied to the software development app that was mentioned in the previous section.
 
 Thank-you for reading until the end of this file.
 
