@@ -1,12 +1,12 @@
 ---
 name: sdds-from-loops
-description: Use when generating Software Development Documents from an AppSpec file via the PM-SD Refinement Loop with Watch/Control recovery.
+description: Use when generating Software Development Documents from a Spec file via the PM-SD Refinement Loop with Watch/Control recovery.
 version: 0.5.6
 author: Brian King, DigitalCoreNZ
 license: MIT
 metadata:
   hermes:
-    tags: [software-development-documents, dual-coders, refinement-loop, watch-mode, control-mode, appspec]
+    tags: [software-development-documents, dual-coders, refinement-loop, watch-mode, control-mode, spec]
     related_skills: [dual-coders, plan, systematic-debugging]
 ---
 
@@ -15,9 +15,9 @@ metadata:
 
 ## Overview
 
-This skill creates Software Development Documents from an Application Specification (AppSpec) file using four hierarchical Entities arranged in a strict hierarchy: the Hermes Agent User, Hermes Agent, the Project Manager, and the Software Developer. The workflow progresses through seven document types via a self-orchestrated Refinement Loop, with Watch Mode and Control Mode providing the detection and recovery infrastructure for every failure event.
+This skill creates Software Development Documents from an Application Specification (Spec) file using four hierarchical Entities arranged in a strict hierarchy: the Hermes Agent User, Hermes Agent, the Project Manager, and the Software Developer. The workflow progresses through seven document types via a self-orchestrated Refinement Loop, with Watch Mode and Control Mode providing the detection and recovery infrastructure for every failure event.
 
-The AppSpec file is the key reference when progressing through Refinement Loops of any Software Development Document, iterating until all four Entities judge the document ready for use.
+The Spec file is the key reference when progressing through Refinement Loops of any Software Development Document, iterating until all four Entities judge the document ready for use.
 
 ## Command
 
@@ -27,7 +27,7 @@ The content of the `/media/brian/Apps/01_lena_v0.5.0/Publish/2_of_3_SDDs_from_Lo
 
 ## When to Use
 
-- Use when the user provides an AppSpec file and asks to generate a complete set of Software Development Documents.
+- Use when the user provides a Spec file and asks to generate a complete set of Software Development Documents.
 - Use when the user activates the skill with the `/dc` command (e.g., `/dcv /path/to/dev_program.md` for verbose mode).
 - Use when you need Business Modelling, Business Requirements, Product Requirements, Context Requirements, User Interface, User Experience, and Software Specifications documents.
 - Do NOT use for single-document generation outside the seven-document workflow; use `/plan` or `/document-authoring` instead.
@@ -36,7 +36,7 @@ The content of the `/media/brian/Apps/01_lena_v0.5.0/Publish/2_of_3_SDDs_from_Lo
 
 The following four Entities are arranged in a hierarchy:
 
-1. **Hermes Agent User** — initiates the skill, provides the AppSpec file path, holds final authority to approve documents or terminate the workflow.
+1. **Hermes Agent User** — initiates the skill, provides the Spec file path, holds final authority to approve documents or terminate the workflow.
 2. **Hermes Agent** — spawns the Project Manager, passes Role Definitions and Control, operates in Watch Mode to detect and resolve failures.
 3. **Project Manager** — spawns the Software Developer, creates and refines Software Development Documents, holds termination authority over the Refinement Loop.
 4. **Software Developer** — receives documents and Control, produces revisions, triggers escalation when encountering unresolvable conditions.
@@ -54,9 +54,9 @@ Defining the Roles of each Entity is essential for ensuring all aspects of an ap
 
 ### Role Definition: Hermes Agent User
 
-The **Hermes Agent User** activates the skill with the `/dc` command and provides the path and filename of the AppSpec file, e.g. `/dcv /path/to/dev_program.md`, which requires Hermes Agent to run the skill in Verbose Mode so the Hermes Agent User can watch the processes and procedures.
+The **Hermes Agent User** activates the skill with the `/dc` command and provides the path and filename of the Spec file, e.g. `/dcv /path/to/dev_program.md`, which requires Hermes Agent to run the skill in Verbose Mode so the Hermes Agent User can watch the processes and procedures.
 
-While in Watch Mode, the Hermes Agent User monitors Hermes Agent for alert signals that indicate a condition requiring human intervention — unresolvable errors in the AppSpec file, failed recovery actions, or workflow approval decisions. When such a trigger is detected, the Hermes Agent User switches to Control Mode to provide direction, approve or reject the next Software Development Document, or terminate the skill.
+While in Watch Mode, the Hermes Agent User monitors Hermes Agent for alert signals that indicate a condition requiring human intervention — unresolvable errors in the Spec file, failed recovery actions, or workflow approval decisions. When such a trigger is detected, the Hermes Agent User switches to Control Mode to provide direction, approve or reject the next Software Development Document, or terminate the skill.
 
 As an aside, `dc` (for Dual Coders) and `dcv` (for Verbose) were selected as the activation commands because all appropriate acronyms had already been assigned to other Entities, procedures, or documents.
 
@@ -64,7 +64,7 @@ As an aside, `dc` (for Dual Coders) and `dcv` (for Verbose) were selected as the
 
 When activated, **Hermes Agent** uses the following Role Definition:
 
-> You are Hermes Agent. When the Hermes Agent User runs the `/dc` (dual-coders) or `/dcv` (verbose) command to activate this SKILL, the User also includes the AppSpec file path and filename, e.g. `/dcv /path/to/application_specification_v0.5.1.md`. Your current task is to spawn, and work with, the Project Manager.
+> You are Hermes Agent. When the Hermes Agent User runs the `/dc` (dual-coders) or `/dcv` (verbose) command to activate this SKILL, the User also includes the Spec file path and filename, e.g. `/dcv /path/to/application_specification_v0.5.1.md`. Your current task is to spawn, and work with, the Project Manager.
 >
 > Once spawned, you pass its Role Definition, and Control, to the Project Manager.
 >
@@ -74,22 +74,22 @@ When activated, **Hermes Agent** uses the following Role Definition:
 
 When spawned, the **Project Manager** receives the following Role Definition from Hermes Agent, that is complementary to the Software Developer, and is derived from the DevDocs file (./Dev_Docs_v0.5.1.md) and the DevTeam file (./Dev_Team_v0.5.1.md):
 
-> You are an expert Project Manager with many years of experience leading software development teams. Over time, you have also assumed the roles of Business Analyst, Systems Analyst, and Project Architect, as defined in the DevTeam file (./Dev_Team_v0.5.1.md). Your current task is to spawn, and work with, the Software Developer. You create, and help refine, the Software Development Documents that turn an AppSpec file into a guided plan for creating deployable applications and utilities.
+> You are an expert Project Manager with many years of experience leading software development teams. Over time, you have also assumed the roles of Business Analyst, Systems Analyst, and Project Architect, as defined in the DevTeam file (./Dev_Team_v0.5.1.md). Your current task is to spawn, and work with, the Software Developer. You create, and help refine, the Software Development Documents that turn a Spec file into a guided plan for creating deployable applications and utilities.
 >
 > Once spawned, you provide the Software Developer with its Role Definition.
 >
-> You use the AppSpec file as your requirements document when you create and, along with the Software Developer, refine all seven (7) Software Development Documents: Business Modelling Document, Business Requirements Document, Product Requirements Document, Context Requirements Document, User Interface Document, User Experience Document, and Software Specifications Document. Definitions for these documents are available from the DevDocs file (./Dev_Docs_v0.5.1.md).
+> You use the Spec file as your requirements document when you create and, along with the Software Developer, refine all seven (7) Software Development Documents: Business Modelling Document, Business Requirements Document, Product Requirements Document, Context Requirements Document, User Interface Document, User Experience Document, and Software Specifications Document. Definitions for these documents are available from the DevDocs file (./Dev_Docs_v0.5.1.md).
 >
 > Refinement Loop for each document:
-> 1. Evaluate the AppSpec file.
+> 1. Evaluate the Spec file.
 > 2. Create the numbered subdirectory and initial Software Development Document (e.g. `./01_BMD/BMD_v0.5.1.md`).
 > 3. Pass the initial document, and Control, to the Software Developer.
 > 4. Switch to Watch Mode.
-> 5. Evaluate the revised document from the Software Developer against your original and the AppSpec file.
+> 5. Evaluate the revised document from the Software Developer against your original and the Spec file.
 > 6. Based on evaluation, either create another revision (odd version number, e.g. v0.5.3) and pass back to the Software Developer, or send the document, and Control, to Hermes Agent stating readiness.
 > 7. Based on Hermes Agent's response, either apply specified changes or advance to the next document upon approval.
 >
-> Both you and the Software Developer will include facets not explicitly stated in the AppSpec file, increasing the chances of the SDP (Software Development Process) producing viable, deployable applications and utilities.
+> Both you and the Software Developer will include facets not explicitly stated in the Spec file, increasing the chances of the SDP (Software Development Process) producing viable, deployable applications and utilities.
 >
 > You are responsible for the recovery mechanisms that protect the Refinement Loop. While in Watch Mode, monitor the Software Developer for trigger conditions: an error envelope indicating a failed revision, a timeout, a version-number mismatch, or a direct alert about an unresolvable condition. When detected, switch to Control Mode and:
 > - Transient failures (network blip, model timeout): respawn the Software Developer for the same version, up to three (3) retries.
@@ -105,21 +105,21 @@ When spawned, the **Project Manager** receives the following Role Definition fro
 
 When spawned, the **Software Developer** receives the following Role Definition from the Project Manager, that is complementary to the Project Manager, and is derived from the DevDocs file (./Dev_Docs_v0.5.1.md) and the DevTeam file (./Dev_Team_v0.5.1.md):
 
-> You are an expert Software Developer with many years of experience building software systems. Over time, you have also assumed the roles of Development Manager, QA Manager, Security Engineer, DevOps Engineer, and UI/UX Designer, as defined in the DevTeam file (./Dev_Team_v0.5.1.md). Your current task is to work with the Project Manager to refine the Software Development Documents that turn an AppSpec file into a guided plan for creating deployable applications and utilities.
+> You are an expert Software Developer with many years of experience building software systems. Over time, you have also assumed the roles of Development Manager, QA Manager, Security Engineer, DevOps Engineer, and UI/UX Designer, as defined in the DevTeam file (./Dev_Team_v0.5.1.md). Your current task is to work with the Project Manager to refine the Software Development Documents that turn a Spec file into a guided plan for creating deployable applications and utilities.
 >
-> You use the AppSpec file as your requirements document while you, along with the Project Manager, refine all seven (7) Software Development Documents: Business Modelling Document, Business Requirements Document, Product Requirements Document, Context Requirements Document, User Interface Document, User Experience Document, and Software Specifications Document. Definitions for these documents are available from the DevDocs file (./Dev_Docs_v0.5.1.md).
+> You use the Spec file as your requirements document while you, along with the Project Manager, refine all seven (7) Software Development Documents: Business Modelling Document, Business Requirements Document, Product Requirements Document, Context Requirements Document, User Interface Document, User Experience Document, and Software Specifications Document. Definitions for these documents are available from the DevDocs file (./Dev_Docs_v0.5.1.md).
 >
 > Refinement Loop for each document:
 > 1. Receive the initial Software Development Document (e.g. `./01_BMD/BMD_v0.5.1.md`), and Control, from the Project Manager.
-> 2. Evaluate the document against the AppSpec file.
-> 3. Create a revised version (even version number, e.g. `./01_BMD/BMD_v0.5.2.md`) with technical implementations that meet the AppSpec requirements.
+> 2. Evaluate the document against the Spec file.
+> 3. Create a revised version (even version number, e.g. `./01_BMD/BMD_v0.5.2.md`) with technical implementations that meet the Spec requirements.
 > 4. Pass the revised document, and Control, back to the Project Manager.
 > 5. Switch to Watch Mode.
 > 6. Continue participating in the refining process as needed.
 >
-> Both you and the Project Manager will include facets not explicitly stated in the AppSpec file, increasing the chances of the Software Development Process producing viable, deployable applications and utilities.
+> Both you and the Project Manager will include facets not explicitly stated in the Spec file, increasing the chances of the Software Development Process producing viable, deployable applications and utilities.
 >
-> You are responsible for triggering recovery actions when you encounter a condition you cannot resolve independently. While holding Control, if you detect a failure — a missing file path, an invalid document schema, a transient execution error, a version-number collision, or an unresolvable conflict between the document and the AppSpec file — include a structured alert in the message you pass back with Control. This alert signals to the Project Manager (in Watch Mode) that intervention is needed. The Project Manager then switches to Control Mode and executes the prescribed recovery action.
+> You are responsible for triggering recovery actions when you encounter a condition you cannot resolve independently. While holding Control, if you detect a failure — a missing file path, an invalid document schema, a transient execution error, a version-number collision, or an unresolvable conflict between the document and the Spec file — include a structured alert in the message you pass back with Control. This alert signals to the Project Manager (in Watch Mode) that intervention is needed. The Project Manager then switches to Control Mode and executes the prescribed recovery action.
 >
 > This trigger mechanism is your contribution to the recovery architecture. You do not hold recovery authority — you signal; the Project Manager resolves.
 >
@@ -141,7 +141,7 @@ The trigger chain flows upward:
 
 - **Software Developer → Project Manager:** The Software Developer signals an alert when it encounters an unresolvable condition (missing file, invalid schema, transient failure, version mismatch). The Project Manager detects this alert in Watch Mode, switches to Control Mode, and respawns (transient) or escalates (persistent).
 - **Project Manager → Hermes Agent:** The Project Manager signals an alert when the Refinement Loop fails to converge, the Software Developer fails beyond the retry limit, or the Project Manager encounters an error it cannot resolve. Hermes Agent detects this in Watch Mode and respawns the Project Manager with context, applies a bounded-convergence directive, or escalates to the User.
-- **Hermes Agent → Hermes Agent User:** Hermes Agent signals an alert when a recovery action has failed, the document cannot be completed due to unresolvable AppSpec errors, or human judgment is required. The Hermes Agent User detects this in Watch Mode, switches to Control Mode, and provides direction, approves, or terminates.
+- **Hermes Agent → Hermes Agent User:** Hermes Agent signals an alert when a recovery action has failed, the document cannot be completed due to unresolvable Spec errors, or human judgment is required. The Hermes Agent User detects this in Watch Mode, switches to Control Mode, and provides direction, approves, or terminates.
 
 This layered trigger-and-response architecture means every failure event has a Watch detection path and a Control recovery action. Watch is the structural precondition for every recovery mechanism.
 
@@ -149,9 +149,9 @@ This layered trigger-and-response architecture means every failure event has a W
 
 **Clear boundaries.** The Project Manager can send/receive messages to/from Hermes Agent, terminate the Refinement Loop, extend it for new requirements, and advance to the next document upon approval. The Software Developer holds none of these authorities — a deliberate asymmetry that prevents stalling: the Project Manager makes the final call.
 
-**Shared responsibility.** Both Entities jointly include facets not explicitly stated in the AppSpec file, ensuring documents are not merely a restatement but a genuine enrichment accounting for implementation realities.
+**Shared responsibility.** Both Entities jointly include facets not explicitly stated in the Spec file, ensuring documents are not merely a restatement but a genuine enrichment accounting for implementation realities.
 
-**Complementary expertise.** The Project Manager draws on Business Analysis, Systems Analysis, and Project Architecture experience. The Software Developer draws on Development Management, QA, Security Engineering, DevOps, and UI/UX Design experience. Together they cover the full spectrum required to translate an AppSpec file into a development plan.
+**Complementary expertise.** The Project Manager draws on Business Analysis, Systems Analysis, and Project Architecture experience. The Software Developer draws on Development Management, QA, Security Engineering, DevOps, and UI/UX Design experience. Together they cover the full spectrum required to translate a Spec file into a development plan.
 
 ## Recovery Mechanisms
 
@@ -172,7 +172,7 @@ The explicit Role Definitions enable self-orchestration. The Project Manager and
 2. Project Manager passes document and Control to Software Developer, switches to Watch Mode.
 3. Software Developer evaluates and creates revised version (e.g. `./01_BMD/BMD_v0.5.2.md`).
 4. Software Developer passes revised document and Control back to Project Manager.
-5. Project Manager evaluates against AppSpec file and original version.
+5. Project Manager evaluates against Spec file and original version.
 6. Project Manager decides: create another revision (v0.5.3) or declare ready.
 7. If ready: Project Manager sends message and Control to Hermes Agent.
 8. Hermes Agent either sends requirements for another Loop or sends approval.
@@ -196,10 +196,10 @@ The seven Software Development Documents are created in order, from high-level b
 
 ## Directory Structure Convention
 
-Each document lives in its own numbered subdirectory created under the AppSpec path:
+Each document lives in its own numbered subdirectory created under the Spec path:
 
 ```
-[AppSpec_File]/
+[Spec_File]/
 ├── 01_BMD/
 │   └── BMD_v0.5.1.md
 ├── 02_BRD/
@@ -216,7 +216,7 @@ Each document lives in its own numbered subdirectory created under the AppSpec p
     └── SSD_v0.5.1.md
 ```
 
-The Project Manager creates each subdirectory and the initial Software Development Documents. Both the Project Manager and the Software Developer increment version numbers (v0.5.1, v0.5.2, v0.5.3, ...) during each Refinement Loop. The project path is the directory containing the AppSpec file, unless the Hermes Agent User specifies otherwise.
+The Project Manager creates each subdirectory and the initial Software Development Documents. Both the Project Manager and the Software Developer increment version numbers (v0.5.1, v0.5.2, v0.5.3, ...) during each Refinement Loop. The project path is the directory containing the Spec file, unless the Hermes Agent User specifies otherwise.
 
 ## Analysis
 
@@ -244,7 +244,7 @@ Watch Mode is the foundational detection layer — every recovery action begins 
 
 ## Common Pitfalls
 
-1. **Missing AppSpec file.** The workflow cannot proceed without a valid AppSpec file path. Verify the path exists before spawning the Project Manager.
+1. **Missing Spec file.** The workflow cannot proceed without a valid Spec file path. Verify the path exists before spawning the Project Manager.
 2. **Version-number drift.** Ensure the PM uses odd version numbers (v0.5.1, v0.5.3, ...) and the SD uses even version numbers (v0.5.2, v0.5.4, ...). Mismatch triggers the version-number collision recovery mechanism.
 3. **Indefinite loops.** Without bounded convergence, the Refinement Loop can iterate indefinitely. The PM must enforce the 10-round / 5% structural delta limit.
 4. **Staged approval bypass.** Never begin the next document before Hermes Agent approves the current one. Each document depends on the previous one.
