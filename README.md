@@ -21,7 +21,7 @@ This README describes a **SKILL** for **Hermes Agent** that uses two (2) **Loopi
 
 ## TL;DR Simple Installation Process
 
-Here is the Hermes Agent SKILL for creating AppSpec files:
+Here is the Hermes Agent SKILL for creating Spec files:
 
 `/plan`
 
@@ -134,7 +134,7 @@ Eventually, I will use the accumulated features of this SKILL to build a softwar
 
 This is the first Hermes Agent SKILL I have ever released into the wild.
 
-My objective is to combine the underlying concepts of this Hermes Agent SKILL with the [AppSpec Files from Loops](https://github.com/DigitalCoreNZ/1_of_3_Specs_from_AI_Loops) repo and the [Apps from AI Loops](https://github.com/DigitalCoreNZ/3_of_3_Apps_from_AI_Loops) repo, resulting in a complete Hermes Agent workflow that can be applied to the software development app that was mentioned in the previous section.
+My objective is to combine the underlying concepts of this Hermes Agent SKILL with the [Spec Files from Loops](https://github.com/DigitalCoreNZ/1_of_3_Specs_from_AI_Loops) repo and the [Apps from AI Loops](https://github.com/DigitalCoreNZ/3_of_3_Apps_from_AI_Loops) repo, resulting in a complete Hermes Agent workflow that can be applied to the software development app that was mentioned in the previous section.
 
 Thank-you for reading until the end of this file.
 
